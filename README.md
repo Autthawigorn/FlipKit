@@ -55,7 +55,7 @@ targets: [
 
 ### AnimationFrame
 
-A single frame in an animation — an image asset name paired with a display duration.
+A single frame in an animation - an image asset name paired with a display duration.
 
 ```swift
 let frame = AnimationFrame("walk_01", duration: 0.08)
@@ -101,7 +101,7 @@ let frames = [
 let idleSet = AnimationSet(frames: frames, loopMode: .loop(count: 0))
 ```
 
-**Uniform convenience** — same duration for every frame:
+**Uniform convenience** - same duration for every frame:
 ```swift
 let runSet = AnimationSet.uniform(
     imageNames: ["run_01", "run_02", "run_03", "run_04"],
@@ -110,7 +110,7 @@ let runSet = AnimationSet.uniform(
 )
 ```
 
-**Numbered convenience** — auto-generates names from a prefix and frame count:
+**Numbered convenience** - auto-generates names from a prefix and frame count:
 ```swift
 // Produces: "walk_01", "walk_02", … "walk_08"
 let walkSet = AnimationSet.numbered(
@@ -243,17 +243,17 @@ struct CharacterView: View {
 ## Architecture
 
 ```
-LoopMode                — shared enum controlling loop behaviour (per-set & per-sequence)
+LoopMode                - shared enum controlling loop behaviour (per-set & per-sequence)
 
-AnimationFrame          — one image asset name + display duration
+AnimationFrame          - one image asset name + display duration
       ↓
-AnimationSet            — ordered frames + own LoopMode
+AnimationSet            - ordered frames + own LoopMode
       │                   factory methods: .uniform() / .numbered()
       ↓
-AnimationManager        — sequences multiple sets, drives the Timer,
+AnimationManager        - sequences multiple sets, drives the Timer,
       │                   publishes currentImageName / currentSetIndex / isPlaying
       ↓
-SequenceImageView       — SwiftUI view: renders current frame,
+SequenceImageView       - SwiftUI view: renders current frame,
                           respects Reduce Motion, supports VoiceOver label
 ```
 
