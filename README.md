@@ -1,6 +1,6 @@
 # FlipKit
 
-> SwiftUI Sequence Image Animation Package — chain multiple animation sets, control playback, and react to completion events with ease.
+> SwiftUI Sequence Image Animation Package - chain multiple animation sets, control playback, and react to completion events with ease.
 
 ---
 
